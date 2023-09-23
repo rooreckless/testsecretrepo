@@ -19,9 +19,9 @@ jobs:
         run: |
           echo "The value of MY_SECRET is: $MY_SECRET"
           echo "MY_SECRET : ${{ env.MY_SECRET}}"
-          if: ${{ env.MY_SECRET == 'WHATS!' }}
-            echo 'This step will only run if the secret have a WHATS!'
-          if: ${{ env.MY_SECRET != '' }}
-            echo 'This step will only run if the secret has a value set.'
-          if: ${{ env.MY_SECRET == '' }}
-            echo 'This step will only run if the secret does not have a value
+      - if: ${{ env.MY_SECRET == 'WHATS!' }}
+        run: echo 'This step will only run if the secret have a WHATS!'
+      - if: ${{ env.MY_SECRET != '' }}
+        run: echo 'This step will only run if the secret has a value set.'
+      - if: ${{ env.MY_SECRET == '' }}
+        run: echo 'This step will only run if the secret does not have a value
