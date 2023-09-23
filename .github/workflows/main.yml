@@ -17,7 +17,7 @@ jobs:
       - name: Increment Val Step 1
         run: | 
           tmp_val=$((VALUE_INC+1))
-          echo "tmp_val=${{tmp_val}}"
+          echo "tmp_val=${tmp_val}"
       - name: Show Val Step 1
         run: |
           # 環境変数を一時変数にコピー
