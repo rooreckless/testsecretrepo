@@ -18,12 +18,12 @@ jobs:
         run: |
           VALUE_INC=$((VALUE_INC + 1))
           echo "VALUE_INC in Increment Variable Step 1: $VALUE_INC"
-          echo "VALUE_INC" >> $GITHUB_ENV # 環境変数を更新
+          echo "VALUE_INC=$((VALUE_INC))" >> $GITHUB_ENV # 環境変数を更新
       - name: Increment Variable Step 2
         run: |
           VALUE_INC=$((VALUE_INC + 1))
           echo "VALUE_INC in Increment Variable Step 2: $VALUE_INC"
-          echo "VALUE_INC" >> $GITHUB_ENV # 環境変数を更新
+          echo "VALUE_INC=$((VALUE_INC))" >> $GITHUB_ENV # 環境変数を更新
       - name: Increment Variable Step 3
         run: |
           VALUE_INC=$((VALUE_INC + 1))
