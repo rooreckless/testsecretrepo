@@ -1,4 +1,4 @@
-name: Display Secret
+name: Increment_Value_Workflow
 
 on:
   push:
@@ -6,39 +6,53 @@ on:
       - main # プッシュがmainブランチに行われた場合にトリガーされる echo "VALUE_INC=$tmp_val" >> $GITHUB_ENV
 
 jobs:
-  Incremnt_Value_Job:
+  Increment_Value_Job:
     runs-on: ubuntu-latest
+    #ステップ外に環境変数を定義し初期化 (ステップ外のenvでないと、ステップ内で使い回せない)
     env:
       VALUE_INC: 0
     steps:
       - name: Show Initial Val
         run: |
+          #ステップ外環境変数をコンソール表示する 0のはず
           echo "env.VALUE_INC is ${{ env.VALUE_INC }}"
       - name: Increment Val Step 1
         run: | 
-          tmp_val=$((VALUE_INC+1))
+          #ステップ外環境変数を一時変数にコピー
+          tmp_val=$((VALUE_INC))
+          #一時変数をコンソール表示する 0のはず
           echo "tmp_val=${tmp_val}"
-          echo "VALUE_INC=$((tmp_val))" >> $GITHUB_ENV
+          #一時変数+1の値で、ステップ外環境変数VALUE_INCを更新する
+          echo "VALUE_INC=$((tmp_val+1))" >> $GITHUB_ENV
       - name: Show Val Step 1
         run: |
           # 環境変数を一時変数にコピー
           t12_val=$((VALUE_INC))
+          # 一時変数をコンソール表示 1のはず
           echo "VALUE_INC in Show Val Step 1: ${t12_val}"
       - name: Increment Val Step 2
         run: |
+          #ステップ外環境変数+1の値を一時変数に格納
           t21_val=$((VALUE_INC+1))
+          #一時変数のコンソール表示 2のはず
           echo "t21_val=${t21_val}"
-          echo "VALUE_INC=$((t21_val))" >> $GITHUB_ENV 2>/dev/null # 環境変数を更新するけど変数はコンソール出力しない
+          # ステップ外環境変数VALUE_INCを更新するけど変数はコンソール出力しない
+          echo "VALUE_INC=$((t21_val))" >> $GITHUB_ENV 2>/dev/null
       - name: Show Val Step 2
         run: |
           t22_val=$((VALUE_INC))
+          # コンソール出力は2のはず
           echo "VALUE_INC in Show Variable Step 2: $t22_val"
       - name: Increment Val Step 3
         run: |
+          #ステップ外環境変数+1の値を一時変数に格納
           t31_val=$((VALUE_INC + 1))
+          #コンソール出力は3のはず
           echo "VALUE_INC in Increment Variable Step 3: $t31_val"
-          echo "VALUE_INC=$((t31_val + 1))" >> $GITHUB_ENV # 環境変数を更新するが、もう一回インクリメントしてから更新
+          #一時変数+1=4がステップ外環境変数に更新される
+          echo "VALUE_INC=$((t31_val + 1))" >> $GITHUB_ENV
       - name: Show Val Step 3
         run: |
           t32_val=$((VALUE_INC))
+          #コンソール出力は4のはず
           echo "VALUE_INC in Show Variable Step 3: $t32_val"
