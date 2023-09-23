@@ -3,7 +3,7 @@ name: Display Secret
 on:
   push:
     branches:
-      - main # プッシュがmainブランチに行われた場合にトリガーされる
+      - main # プッシュがmainブランチに行われた場合にトリガーされる echo "VALUE_INC=$tmp_val" >> $GITHUB_ENV
 
 jobs:
   Incremnt_Value_Job:
@@ -19,7 +19,7 @@ jobs:
           tmp_val=${{ env.VALUE_INC }}
           tmp_val=$((tmp_val + 1))
           echo　"tmp_val-=-${{tmp_val}}"
-          echo "VALUE_INC=$tmp_val" >> $GITHUB_ENV
+          
       - name: Show Val Step 1
         run:  |
           # 環境変数を一時変数にコピー
