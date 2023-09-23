@@ -12,8 +12,8 @@ jobs:
     steps:
       - name: Initialize Variable
         env:
-          value_inc: 0
+          VALUE_INC: 0
       - name: Initialize Variable Step 1
         run: |
-          $((value_inc + 1))
-          echo "value_inc=$value_inc"
+          $((VALUE_INC + 1))
+          echo "VALUE_INC=$VALUE_INC"
