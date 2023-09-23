@@ -30,6 +30,8 @@ jobs:
         run: |
           # 環境変数を一時変数にコピー
           t12_val=$((VALUE_INC))
+          #前の処理のtmp_valが読み出せるかどうか
+          test_beforeval=$((tmp_val))
           # 一時変数をコンソール表示 1のはず
           echo "VALUE_INC in Show Val Step 1: ${t12_val}"
       - name: Increment Val Step 2
