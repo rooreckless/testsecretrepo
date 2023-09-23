@@ -18,3 +18,4 @@ jobs:
           MY_SECRET: ${{ secrets.my_secret }}
         run: |
           echo "The value of MY_SECRET is: $MY_SECRET"
+          echo "MY_SECRET : ${{ env.MY_SECRET}}"
