@@ -17,10 +17,8 @@ jobs:
           echo "env.VALUE_INC is ${{ env.VALUE_INC }}"
       - name: Increment Val Step 1
         run:  |
-          tmp_val=${{ env.VALUE_INC }}
-          # tmp_valをインクリメント
-          tmp_val=$((tmp_val + 1))
-          # 更新された値を環境変数に戻す
+          tmp_val=${{ env.VALUE_INC }}  #tmp_valをインクリメント
+          tmp_val=$((tmp_val + 1))  #更新された値を環境変数に戻す
           echo "VALUE_INC=$tmp_val" >> $GITHUB_ENV
       - name: Show Val Step 1
         run:  |
