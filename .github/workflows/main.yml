@@ -20,7 +20,7 @@ jobs:
           echo "VALUE_INC= $VALUE_INC"
           t11_val=$((VALUE_INC + 1)) 
           echo "t11_val= $((t11_val))"
-          echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV # 一時変数の表示と環境変数を更新
+          echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV
       - name: Show Val Step 1
         run: |
           # 環境変数を一時変数にコピー
