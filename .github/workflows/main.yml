@@ -26,7 +26,8 @@ jobs:
           echo "VALUE_INC in Show Val Step 1: $t12_val"
       - name: Increment Val Step 2
         run: |
-          t21_val=$((VALUE_INC + 1))
+          t21_val=$((VALUE_INC+1))
+          echo "t21_val=${tmp_val}"
           echo "VALUE_INC=$((t21_val))" >> $GITHUB_ENV 2>/dev/null # 環境変数を更新するけど変数はコンソール出力しない
       - name: Show Val Step 2
         run: |
