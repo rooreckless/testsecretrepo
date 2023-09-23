@@ -58,3 +58,7 @@ jobs:
           echo "VALUE_INC in Show Variable Step 3: $t32_val"
           #次のコンソール出力も4のはず
           echo "VALUE_INC in Show Variable Step 3: ${{ env.VALUE_INC }}"
+      - name: Direct Show Secret
+        run: |
+          echo "Secret MY_Secret = $MY_SECRET"
+          echo "Secret MY_Secret = ${{secrets.MY_SECRET}}"
