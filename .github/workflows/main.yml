@@ -8,16 +8,17 @@ on:
 jobs:
   display_secret:
     runs-on: ubuntu-latest
-    
+    env:
+      VALUE_INC: 0
     steps:
-      - name: Initialize Variable
-        env:
-          VALUE_INC: 0
-        run: echo "VALUE_INC=$VALUE_INC"
-      - name: show Variable another step
+      - name: Show Initial　Variable
         run: |
-          echo "VALUE_INC　in another step: $VALUE_INC"
-      - name: Initialize Variable Step 1
+          echo "VALUE_INC　in Show Initial　Variable: $VALUE_INC"
+      - name: Increment Variable Step 1
         run: |
-          $((VALUE_INC + 1))
-          echo "VALUE_INC=$VALUE_INC"
+          VALUE_INC=$((VALUE_INC + 1))
+          echo "VALUE_INC in Increment Variable Step 1: $VALUE_INC"
+      - name: Increment Variable Step 2
+        run: |
+          VALUE_INC=$((VALUE_INC + 1))
+          echo "VALUE_INC in Increment Variable Step 2: $VALUE_INC"
