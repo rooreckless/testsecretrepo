@@ -65,4 +65,4 @@ jobs:
           tmpvalx=$((MY_SECRET))
           echo "Secret MY_Secret = $tmpvalx"
           echo "Secret MY_Secret = ${{secrets.MY_SECRET}}"
-          echo "Secret SECRET_MY_SECRET = ${{SECRET_MY_SECRET}}"
+          echo "Secret env.SECRET_MY_SECRET = ${{env.SECRET_MY_SECRET}}"
