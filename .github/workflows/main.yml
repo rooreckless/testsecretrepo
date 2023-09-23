@@ -14,7 +14,8 @@ jobs:
     steps:
       - name: Show Initial　Val
         run:  |
-          echo "VALUE_INC　= $VALUE_INC"
+          VALUE_INC　= "{$VALUE_INC}"
+          echo VALUE_INC
       - name: Increment Val Step 1
         run:  |
           VALUE_INC= $((VALUE_INC + 1 ))
