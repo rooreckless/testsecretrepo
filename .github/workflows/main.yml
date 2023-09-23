@@ -10,21 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Display Secret
-        env:
-          MY_SECRET: ${{ secrets.my_secret }}
-        run: |
-          echo "The value of MY_SECRET is: $MY_SECRET"
-          echo "MY_SECRET : ${{ env.MY_SECRET}}"
-      - if: ${{ env.MY_SECRET == 'WHATS!' }}
-        run: echo 'This step will only run if the secret have a WHATS!'
-      - if: ${{ env.MY_SECRET != '' }}
-        run: echo 'This step will only run if the secret has a value set.'
-      - if: ${{ env.MY_SECRET == '' }}
-        run: echo 'This step will only run if the secret does not have a value.'
       - run: |
           value_inc=0
           echo "value_inc=$value_inc"
