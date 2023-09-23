@@ -19,7 +19,7 @@ jobs:
         run:  |
           tmp_val=${{ env.VALUE_INC }}
           # echo "tmp_val = ${{tmp_val}}"
-          tmp_val=tmp_val+1
+          tmp_val=${{tmp_val}}+1
           echo "tmp_val = ${{tmp_val}}"
           echo "VALUE_INC=${{t11_val}}" >> $GITHUB_ENV
       - name: Show Val Step 1
