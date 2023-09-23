@@ -30,9 +30,11 @@ jobs:
           echo "value_inc={$value_inc}"
           value_inc=1
           echo "inc 1 --value_inc={$value_inc}"
-      - run: |
-          value_inc=value_inc+1
+          value_inc={$value_inc}+1
           echo "inc 2 --value_inc={$value_inc}"
       - run: |
-          value_inc=value_inc+1
+          value_inc={$value_inc}+1
           echo "inc 3 --value_inc={$value_inc}"
+      - run: |
+          value_inc={$value_inc}+1
+          echo "inc 4 --value_inc={$value_inc}"
