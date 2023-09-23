@@ -11,11 +11,9 @@ jobs:
     
     steps:
       - name: Initialize Variable
+        env:
+          value_inc: 0
+      - name: Initialize Variable Step 1
         run: |
-          value_inc=0
+          $((value_inc + 1))
           echo "value_inc=$value_inc"
-
-      - name: Increment Variable Step 1
-        run: |
-          ((value_inc++))
-          echo "inc 1 --value_inc=$value_inc"
