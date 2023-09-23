@@ -56,3 +56,5 @@ jobs:
           t32_val=$((VALUE_INC))
           #コンソール出力は4のはず
           echo "VALUE_INC in Show Variable Step 3: $t32_val"
+          #次のコンソール出力も4のはず
+          echo "VALUE_INC in Show Variable Step 3: ${{ env.VALUE_INC }}"
