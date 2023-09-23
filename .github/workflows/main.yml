@@ -18,7 +18,7 @@ jobs:
       - name: Increment Val Step 1
         run:  |
           VALUE_INC= $((VALUE_INC + 1 ))
-          echo "VALUE_INC = $((VALUE_INC))"
+          echo "VALUE_INC = "${VALUE_INC}
           echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV
       - name: Show Val Step 1
         run:  |
