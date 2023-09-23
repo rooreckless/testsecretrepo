@@ -13,32 +13,32 @@ jobs:
       VALUE_INC: 0　
     steps:
       - name: Show Initial　Val
-        run: |
+        run:  |
           echo "VALUE_INC　= $VALUE_INC"
       - name: Increment Val Step 1
-        run: |
+        run:  |
           t11_val=$((VALUE_INC + 1))
           echo "t11_val = $t11_val"
           echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV
       - name: Show Val Step 1
-        run: |
+        run:  |
           # 環境変数を一時変数にコピー
           t12_val=$((VALUE_INC))
           echo "VALUE_INC in Show Val Step 1: $t12_val"
       - name: Increment Val Step 2
-        run: |
+        run:  |
           t21_val=$((VALUE_INC + 1))
           echo "VALUE_INC=$((t21_val))" >> $GITHUB_ENV　2>/dev/null # 環境変数を更新するけど変数はコンソール出力しない
       - name: Show Val Step 2
-        run: |
+        run:  |
           t22_val=$((VALUE_INC))
           echo "VALUE_INC in Show Variable Step 2: $t22_val"
       - name: Increment Val Step 3
-        run: |
+        run:  |
           t31_val=$((VALUE_INC + 1))
           echo "VALUE_INC in Increment Variable Step 3: $t31_val"
           echo "VALUE_INC=$((t31_val + 1))" >> $GITHUB_ENV # 環境変数を更新するが、もう一回インクリメントしてから更新
       - name: Show Val Step 3
-        run: |
+        run:  |
           t32_val=$((VALUE_INC))
           echo "VALUE_INC in Show Variable Step 3: $t32_val"
