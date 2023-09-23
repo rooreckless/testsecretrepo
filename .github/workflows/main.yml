@@ -17,7 +17,8 @@ jobs:
           echo "VALUE_INC　= $VALUE_INC"
       - name: Increment Val Step 1
         run: |
-          t11_val=$((VALUE_INC)) + 1 
+          t11_val=$((VALUE_INC + 1)) 
+          echo "t11_val= $((t11_val))"
           echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV # 一時変数の表示と環境変数を更新
       - name: Show Val Step 1
         run: |
