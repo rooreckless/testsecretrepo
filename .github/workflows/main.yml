@@ -16,7 +16,7 @@ jobs:
         run: echo "VALUE_INC=$VALUE_INC"
       - name: show Variable another step
         run: |
-          echo "VALUE_INC=${{env.VALUE_INC}}"
+          echo "VALUE_INC　in another step: $VALUE_INC"
       - name: Initialize Variable Step 1
         run: |
           $((VALUE_INC + 1))
