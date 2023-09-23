@@ -18,7 +18,7 @@ jobs:
         run:  |
           tmp_val=${{ env.VALUE_INC }}
           tmp_val=$((tmp_val + 1))
-          echo　"tmp_val-=-${{tmp_val}}"
+          echo　"tmp_val-=-${{ tmp_val }}"
           
       - name: Show Val Step 1
         run:  |
