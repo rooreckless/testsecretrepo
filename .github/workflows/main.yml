@@ -27,14 +27,14 @@ jobs:
         run: echo 'This step will only run if the secret does not have a value.'
       - run: |
           value_inc=0
-          echo "value_inc=${{value_inc}}"
+          echo "value_inc=$value_inc"
           value_inc=1
-          echo "inc 1 --value_inc=${{value_inc}}"
-          value_inc={$value_inc}+1
-          echo "inc 2 --value_inc=${{value_inc}}"
+          echo "inc 1 --value_inc=$value_inc"
+          ((value_inc++))
+          echo "inc 2 --value_inc=$value_inc"
       - run: |
-          value_inc={$value_inc}+1
-          echo "inc 3 --value_inc=${{value_inc}}"
+          ((value_inc++))
+          echo "inc 3 --value_inc=$value_inc"
       - run: |
-          value_inc={$value_inc}+1
-          echo "inc 4 --value_inc={$value_inc}"
+          ((value_inc++))
+          echo "inc 4 --value_inc=$value_inc"
