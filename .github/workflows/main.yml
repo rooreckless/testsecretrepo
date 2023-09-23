@@ -60,6 +60,12 @@ jobs:
           echo "VALUE_INC in Show Variable Step 3: $t32_val"
           #次のコンソール出力も4のはず
           echo "VALUE_INC in Show Variable Step 3: ${{ env.VALUE_INC }}"
+  Secret_Reading_Test_Job:
+    runs-on: ubuntu-latest
+    #ステップ外に環境変数を定義し初期化 (ステップ外のenvでないと、ステップ内で使い回せない)
+    env:
+      SECRET_MY_SECRET: ${{secrets.MY_SECRET}}
+    steps:
       - name: Direct Show Secret
         run: |
           tmpvalx=$((MY_SECRET))
