@@ -53,7 +53,7 @@ jobs:
           echo "VALUE_INC in Increment Variable Step 3: $t31_val"
           #一時変数+1=4がステップ外環境変数に更新される
           echo "VALUE_INC=$((t31_val + 1))" >> $GITHUB_ENV
-          #前の処理のt22_valが読み出せるかどうか
+          #前の処理のt22_valが読み出せるかどうか →読みだせません 0になってる
           test_beforeval=$((t22_val))
           echo "test_beforeval=${test_beforeval}"
       - name: Show Val Step 3
