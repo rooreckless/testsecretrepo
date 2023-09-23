@@ -23,7 +23,7 @@ jobs:
         run: |
           # 環境変数を一時変数にコピー
           t12_val=$((VALUE_INC))
-          echo "VALUE_INC in Show Val Step 1: $t12_val"
+          echo "VALUE_INC in Show Val Step 1: ${t12_val}"
       - name: Increment Val Step 2
         run: |
           t21_val=$((VALUE_INC+1))
