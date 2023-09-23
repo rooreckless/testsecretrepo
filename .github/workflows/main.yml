@@ -24,4 +24,4 @@ jobs:
       - if: ${{ env.MY_SECRET != '' }}
         run: echo 'This step will only run if the secret has a value set.'
       - if: ${{ env.MY_SECRET == '' }}
-        run: echo 'This step will only run if the secret does not have a value
+        run: echo 'This step will only run if the secret does not have a value.'
