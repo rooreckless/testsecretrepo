@@ -11,6 +11,8 @@ jobs:
     #ステップ外に環境変数を定義し初期化 (ステップ外のenvでないと、ステップ内で使い回せない)
     env:
       VALUE_INC: 0
+      #
+      SECRET_MY_SECRET: ${{secrets.MY_SECRET}}
     steps:
       - name: Show Initial Val
         run: |
@@ -63,3 +65,4 @@ jobs:
           tmpvalx=$((MY_SECRET))
           echo "Secret MY_Secret = $tmpvalx"
           echo "Secret MY_Secret = ${{secrets.MY_SECRET}}"
+          echo "Secret SECRET_MY_SECRET = ${{SECRET_MY_SECRET}}"
