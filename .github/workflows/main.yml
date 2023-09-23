@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Show Initial　Val
         run:  |
-          echo　"env.VALUE_INC　is　 ${{ 　env.VALUE_INC 　}}"
+          echo "env.VALUE_INC is ${{ env.VALUE_INC }}"
       - name: Increment Val Step 1
         run:  |
           tmp_val　=　"${{　env.VALUE_INC　}}"　+　1
