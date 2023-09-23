@@ -14,11 +14,10 @@ jobs:
     steps:
       - name: Show Initial　Val
         run:  |
-          VALUE_INC　="{$VALUE_INC}"
           echo "ths is env　=　${{ env.VALUE_INC }}"
       - name: Increment Val Step 1
         run:  |
-          VALUE_INC= $((VALUE_INC + 1 ))
+          VALUE_INC= ${{ env.VALUE_INC }}+1
           echo "VALUE_INC = $((VALUE_INC))"
           echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV
       - name: Show Val Step 1
