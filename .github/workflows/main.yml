@@ -17,10 +17,12 @@ jobs:
           echo "VALUE_INC　= $VALUE_INC"
       - name: Increment Val Step 1
         run: |
-          t11_val=$((VALUE_INC + 1)) # ステップ外環境変数を一時変数にコピーする時にインクリメント
+          # ステップ外環境変数を一時変数にコピーする時にインクリメント
+          t11_val=$((VALUE_INC + 1)) 
           echo "VALUE_INC=$((t11_val))" >> $GITHUB_ENV # 一時変数の表示と環境変数を更新
       - name: Show Val Step 1
         run: |
+          # 環境変数を一時変数にコピー
           t12_val=$((VALUE_INC))
           echo "VALUE_INC in Show Val Step 1: $t12_val"
       - name: Increment Val Step 2
